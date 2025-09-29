@@ -35,9 +35,8 @@
             height: 100%;
             opacity: 0;
             transition: opacity 1.2s ease-in-out;
-            background-size: contain; /* تغییر از cover به contain برای نمایش کامل تصویر */
-            background-repeat: no-repeat; /* جلوگیری از تکرار تصویر */
-            background-position: center; /* مرکز تصویر ثابت بمونه */
+            background-size: cover; /* برگردوندن به حالت اولیه */
+            background-position: center;
         }
         .carousel-item::before {
             content: '';
@@ -124,12 +123,14 @@
     <!-- هدر و منوی ناوبری -->
     <nav class="navbar shadow-lg">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-white text-3xl font-extrabold">آتیه درخشان</a>
+            <a href="index.html" class="text-white text-3xl font-extrabold">آتیه درخشان</a>
             <div class="space-x-6 space-x-reverse">
-                <a href="#" class="text-white hover:text-yellow-200 transition duration-300 text-lg">خانه</a>
-                <a href="#" class="text-white hover:text-yellow-200 transition duration-300 text-lg">دوره‌ها</a>
-                <a href="#" class="text-white hover:text-yellow-200 transition duration-300 text-lg">درباره ما</a>
-                <a href="#" class="text-white hover:text-yellow-200 transition duration-300 text-lg">تماس</a>
+                <a href="index.html" class="text-white hover:text-yellow-200 transition duration-300 text-lg">خانه</a>
+                <a href="#about" class="text-white hover:text-yellow-200 transition duration-300 text-lg">درباره ما</a>
+                <a href="#courses" class="text-white hover:text-yellow-200 transition duration-300 text-lg">دوره‌ها</a>
+                <a href="#teachers" class="text-white hover:text-yellow-200 transition duration-300 text-lg">مدرسان</a>
+                <a href="#contact" class="text-white hover:text-yellow-200 transition duration-300 text-lg">تماس با ما</a>
+                <a href="#blog" class="text-white hover:text-yellow-200 transition duration-300 text-lg">وبلاگ</a>
             </div>
         </div>
     </nav>
@@ -137,8 +138,7 @@
     <!-- بخش هیرو با اسلایدر -->
     <section class="hero-section">
         <div class="carousel">
-            <div class="carousel-item active" style="background-image: url('https://github.com/roghayeh-asn/atiye-derakhshan/blob/main/photo_%DB%B2%DB%B0%DB%B2%DB%B5-%DB%B0%DB%B9-%DB%B1%DB%B1_%DB%B2%DB%B1-%DB%B3%DB%B6-%DB%B4%DB%B8.jpg?raw=true'); background-size: contain; background-repeat: no-repeat; background-position: center;">
-                <!-- محتوای دلخواه برای اسلاید اول (اختیاری) -->
+            <div class="carousel-item active" style="background-image: url('https://github.com/roghayeh-asn/atiye-derakhshan/blob/main/photo_%DB%B2%DB%B0%DB%B2%DB%B5-%DB%B0%DB%B9-%DB%B1%DB%B1_%DB%B2%DB%B1-%DB%B3%DB%B6-%DB%B4%DB%B8.jpg?raw=true'); background-size: cover; background-position: center;">
             </div>
             <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1200x450?text=کتاب‌های+آموزشی')"></div>
             <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1200x450?text=کلاس‌های+آتیه+درخشان')"></div>
@@ -146,34 +146,21 @@
         <div class="hero-content">
             <h1>آینده‌ات را درخشان کن!</h1>
             <p>با آموزش‌های ما، موفقیت در دستان توست</p>
-            <a href="#" class="btn-primary mt-4 inline-block">شروع کن</a>
+            <a href="#courses" class="btn-primary mt-4 inline-block">شروع کن</a>
         </div>
     </section>
 
-    <!-- بخش معرفی -->
-    <section class="container mx-auto px-4 py-12 text-center">
-        <h2 class="text-3xl font-extrabold text-blue-800 mb-6">آتیه درخشان، انتخاب تو</h2>
+    <!-- بخش درباره ما -->
+    <section id="about" class="container mx-auto px-4 py-12 text-center">
+        <h2 class="text-3xl font-extrabold text-blue-800 mb-6">درباره ما</h2>
         <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
-            با اساتید حرفه‌ای و روش‌های نوین، موفقیتت را تضمین می‌کنیم!
+            آموزشگاه آتیه درخشان با هدف ارتقاء سطح علمی دانش‌آموزان و ارائه آموزش‌های باکیفیت تأسیس شده است. ما با تیمی حرفه‌ای و روش‌های نوین، بهترین تجربه یادگیری را ارائه می‌دهیم.
         </p>
     </section>
 
-    <!-- بخش فضای آموزشی -->
-    <section class="classroom-section">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-extrabold text-blue-800 mb-8"><i class="fas fa-chalkboard-teacher icon"></i> فضای آموزشی ما</h2>
-            <div class="classroom-card bg-white shadow-lg p-6 mx-auto max-w-2xl">
-                <p class="text-lg text-gray-700 mb-4">
-                    کلاس‌های ما پر از انرژی و خلاقیت است! با روش‌های تدریس تعاملی و اساتید پرانگیزه، یادگیری را به تجربه‌ای شیرین تبدیل می‌کنیم.
-                </p>
-                <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold">بیشتر بخوانید</a>
-            </div>
-        </div>
-    </section>
-
     <!-- بخش دوره‌ها -->
-    <section class="container mx-auto px-4 py-12">
-        <h2 class="text-3xl font-extrabold text-blue-800 mb-8 text-center"><i class="fas fa-book-open icon"></i> دوره‌های ما</h2>
+    <section id="courses" class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-extrabold text-blue-800 mb-8 text-center">دوره‌های ما</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="course-card bg-white shadow-lg p-5">
                 <h3 class="text-xl font-bold text-blue-700 mb-2"><i class="fas fa-calculator icon"></i> ریاضی پیشرفته</h3>
@@ -193,15 +180,37 @@
         </div>
     </section>
 
-    <!-- بخش تماس -->
-    <section class="contact-section">
+    <!-- بخش مدرسان -->
+    <section id="teachers" class="classroom-section">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-extrabold text-blue-800 mb-6"><i class="fas fa-phone-alt icon"></i> با ما همراه شوید</h2>
+            <h2 class="text-3xl font-extrabold text-blue-800 mb-8"><i class="fas fa-chalkboard-teacher icon"></i> مدرسان ما</h2>
+            <div class="classroom-card bg-white shadow-lg p-6 mx-auto max-w-2xl">
+                <p class="text-lg text-gray-700 mb-4">
+                    تیم ما شامل اساتید مجرب و با انگیزه است که با سال‌ها تجربه، دانش‌آموزان را به موفقیت هدایت می‌کنند.
+                </p>
+                <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold">بیشتر بخوانید</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش تماس -->
+    <section id="contact" class="contact-section">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-extrabold text-blue-800 mb-6"><i class="fas fa-phone-alt icon"></i> تماس با ما</h2>
             <p class="text-lg text-gray-700 mb-3">برای مشاوره رایگان تماس بگیرید:</p>
             <p class="text-lg text-gray-700 mb-2"><strong>آدرس:</strong> سهند، فاز دو، نبش میدان معلم، مجتمع تجاری جواهر، طبقه دوم</p>
             <p class="text-lg text-gray-700"><strong>تلفن:</strong> 09144277240 - 09394713666</p>
             <a href="#" class="btn-primary mt-4 inline-block">تماس بگیرید</a>
         </div>
+    </section>
+
+    <!-- بخش وبلاگ -->
+    <section id="blog" class="container mx-auto px-4 py-12 text-center">
+        <h2 class="text-3xl font-extrabold text-blue-800 mb-6">وبلاگ</h2>
+        <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+            مقالات آموزشی و نکات موفقیت در اینجا بخوانید.
+        </p>
+        <a href="#" class="btn-primary mt-4 inline-block">مشاهده مقالات</a>
     </section>
 
     <!-- فوتر -->
@@ -211,8 +220,8 @@
             <p class="text-md mb-2">سهند، فاز دو، نبش میدان معلم، مجتمع جواهر، طبقه دوم</p>
             <p class="text-md mb-3">تلفن: 09144277240 - 09394713666</p>
             <div class="mt-3">
-                <a href="#" class="text-yellow-200 hover:text-yellow-300 mx-3 transition duration-300">تماس</a>
-                <a href="#" class="text-yellow-200 hover:text-yellow-300 mx-3 transition duration-300">شبکه‌های اجتماعی</a>
+                <a href="#contact" class="text-yellow-200 hover:text-yellow-300 mx-3 transition duration-300">تماس</a>
+                <a href="#blog" class="text-yellow-200 hover:text-yellow-300 mx-3 transition duration-300">وبلاگ</a>
             </div>
             <p class="mt-4 text-sm">© 1404 آموزشگاه آتیه درخشان</p>
         </div>
