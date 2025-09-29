@@ -12,32 +12,70 @@
         }
         body {
             font-family: 'Vazir', sans-serif;
+            background-color: #f0f4f8;
         }
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1200x500?text=آموزشگاه+آتیه+درخشان') no-repeat center center;
+            height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
             background-size: cover;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-position: center;
+        }
+        .carousel-item.active {
+            opacity: 1;
+        }
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
             color: white;
+            z-index: 10;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
         }
-        .hero-section h1 {
+        .hero-content h1 {
             font-size: 3.5rem;
             font-weight: bold;
             animation: fadeInDown 1s ease-in-out;
         }
-        .hero-section p {
-            font-size: 1.5rem;
-            animation: fadeInUp 1s ease-in-out;
+        .hero-content p {
+            font-size: 1.6rem;
+            animation: fadeInUp 1.2s ease-in-out;
         }
         .course-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            background: linear-gradient(145deg, #ffffff, #e0e7ff);
+            border-radius: 15px;
+            overflow: hidden;
         }
         .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-12px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        .navbar {
+            background: linear-gradient(to right, #1e3a8a, #3b82f6);
+        }
+        .contact-section {
+            background: linear-gradient(to right, #e0e7ff, #dbeafe);
+            padding: 40px 0;
+        }
+        .footer {
+            background: linear-gradient(to right, #1e3a8a, #3b82f6);
         }
         @keyframes fadeInDown {
             0% { opacity: 0; transform: translateY(-20px); }
@@ -47,70 +85,116 @@
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
+        .btn-primary {
+            background: #facc15;
+            color: #1e3a8a;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #fef08a;
+            transform: scale(1.1);
+        }
     </style>
 </head>
-<body class="bg-gray-100">
+<body>
     <!-- هدر و منوی ناوبری -->
-    <nav class="bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg">
+    <nav class="navbar shadow-lg">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-white text-2xl font-bold">آموزشگاه علمی آتیه درخشان</a>
-            <div class="space-x-4 space-x-reverse">
-                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">خانه</a>
-                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">دوره‌ها</a>
-                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">درباره ما</a>
-                <a href="#" class="text-white hover:text-yellow-300 transition duration-300">تماس با ما</a>
+            <a href="#" class="text-white text-3xl font-extrabold">آتیه درخشان</a>
+            <div class="space-x-6 space-x-reverse">
+                <a href="#" class="text-white hover:text-yellow-200 transition duration-300 text-lg">خانه</a>
+                <a href="#" class="text-white hover:text-yellow-200 transition duration-300 text-lg">دوره‌ها</a>
+                <a href="#" class="text-white hover:text-yellow-200 transition duration-300 text-lg">درباره ما</a>
+                <a href="#" class="text-white hover:text-yellow-200 transition duration-300 text-lg">تماس</a>
             </div>
         </div>
     </nav>
 
-    <!-- بخش هیرو -->
+    <!-- بخش هیرو با اسلایدر -->
     <section class="hero-section">
-        <div>
-            <h1>به آموزشگاه علمی آتیه درخشان خوش آمدید</h1>
-            <p>آینده‌ای درخشان با آموزش‌های مدرن و باکیفیت</p>
-            <a href="#" class="mt-4 inline-block bg-yellow-400 text-blue-800 font-bold py-2 px-6 rounded-full hover:bg-yellow-500 transition duration-300">اکنون ثبت‌نام کنید</a>
+        <div class="carousel">
+            <div class="carousel-item active" style="background-image: url('https://via.placeholder.com/1200x600?text=دانش‌آموزان+ایرانی')"></div>
+            <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1200x600?text=کتاب‌های+آموزشی')"></div>
+            <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1200x600?text=کلاس‌های+آتیه+درخشان')"></div>
+        </div>
+        <div class="hero-content">
+            <h1>موفقیت از اینجا آغاز می‌شود</h1>
+            <p>با آموزش‌های برتر، آینده‌ات را بساز</p>
+            <a href="#" class="btn-primary mt-4 inline-block">شروع کن</a>
         </div>
     </section>
 
     <!-- بخش معرفی -->
     <section class="container mx-auto px-4 py-12 text-center">
-        <h2 class="text-3xl font-bold text-blue-700 mb-6">چرا آتیه درخشان؟</h2>
-        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
-            آموزشگاه علمی آتیه درخشان با تکیه بر اساتید برجسته و روش‌های آموزشی نوین، مسیری روشن برای موفقیت تحصیلی و حرفه‌ای شما فراهم می‌کند. ما با ارائه دوره‌های متنوع و باکیفیت، همراه شما در راه رسیدن به اهدافتان هستیم.
+        <h2 class="text-3xl font-extrabold text-blue-800 mb-6">آتیه درخشان، انتخاب هوشمند</h2>
+        <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+            با اساتید حرفه‌ای و روش‌های نوین، راه موفقیت را هموار می‌کنیم. به ما بپیوندید!
         </p>
     </section>
 
     <!-- بخش دوره‌ها -->
     <section class="container mx-auto px-4 py-12">
-        <h2 class="text-3xl font-bold text-blue-700 mb-8 text-center">دوره‌های آموزشی ما</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="course-card bg-white rounded-lg shadow-lg p-6">
-                <h3 class="text-xl font-bold text-blue-600 mb-2">ریاضیات پیشرفته</h3>
-                <p class="text-gray-600">دوره‌های تخصصی ریاضی برای آمادگی کنکور و امتحانات نهایی.</p>
-                <a href="#" class="mt-4 inline-block text-blue-500 hover:text-blue-700">اطلاعات بیشتر</a>
+        <h2 class="text-3xl font-extrabold text-blue-800 mb-8 text-center">دوره‌های ما</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="course-card bg-white shadow-lg p-5">
+                <h3 class="text-xl font-bold text-blue-700 mb-2">ریاضی پیشرفته</h3>
+                <p class="text-gray-600 mb-3">تسلط بر ریاضی برای کنکور و امتحانات</p>
+                <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold">بیشتر بدان</a>
             </div>
-            <div class="course-card bg-white rounded-lg shadow-lg p-6">
-                <h3 class="text-xl font-bold text-blue-600 mb-2">علوم تجربی</h3>
-                <p class="text-gray-600">آموزش عمیق مفاهیم علوم برای دانش‌آموزان متوسطه.</p>
-                <a href="#" class="mt-4 inline-block text-blue-500 hover:text-blue-700">اطلاعات بیشتر</a>
+            <div class="course-card bg-white shadow-lg p-5">
+                <h3 class="text-xl font-bold text-blue-700 mb-2">علوم تجربی</h3>
+                <p class="text-gray-600 mb-3">یادگیری عمیق علوم با رویکرد عملی</p>
+                <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold">بیشتر بدان</a>
             </div>
-            <div class="course-card bg-white rounded-lg shadow-lg p-6">
-                <h3 class="text-xl font-bold text-blue-600 mb-2">زبان انگلیسی</h3>
-                <p class="text-gray-600">کلاس‌های مکالمه و گرامر برای تمامی سطوح.</p>
-                <a href="#" class="mt-4 inline-block text-blue-500 hover:text-blue-700">اطلاعات بیشتر</a>
+            <div class="course-card bg-white shadow-lg p-5">
+                <h3 class="text-xl font-bold text-blue-700 mb-2">زبان انگلیسی</h3>
+                <p class="text-gray-600 mb-3">مکالمه و گرامر برای موفقیت جهانی</p>
+                <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold">بیشتر بدان</a>
             </div>
         </div>
     </section>
 
-    <!-- فوتر -->
-    <footer class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-6">
+    <!-- بخش تماس -->
+    <section class="contact-section">
         <div class="container mx-auto px-4 text-center">
-            <p>تمامی حقوق برای آموزشگاه علمی آتیه درخشان محفوظ است. &copy; 1404</p>
-            <div class="mt-4">
-                <a href="#" class="text-yellow-300 hover:text-yellow-400 mx-2">تماس با ما</a>
-                <a href="#" class="text-yellow-300 hover:text-yellow-400 mx-2">شبکه‌های اجتماعی</a>
+            <h2 class="text-3xl font-extrabold text-blue-800 mb-6">با ما همراه شوید</h2>
+            <p class="text-lg text-gray-700 mb-3">برای مشاوره رایگان تماس بگیرید:</p>
+            <p class="text-lg text-gray-700 mb-2"><strong>آدرس:</strong> سهند، فاز دو، نبش میدان معلم، مجتمع تجاری جواهر، طبقه دوم</p>
+            <p class="text-lg text-gray-700"><strong>تلفن:</strong> 09144277240 - 09394713666</p>
+            <a href="#" class="btn-primary mt-4 inline-block">تماس بگیرید</a>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="footer text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg mb-3">آتیه درخشان، مسیر موفقیت شما</p>
+            <p class="text-md mb-2">سهند، فاز دو، نبش میدان معلم، مجتمع جواهر، طبقه دوم</p>
+            <p class="text-md mb-3">تلفن: 09144277240 - 09394713666</p>
+            <div class="mt-3">
+                <a href="#" class="text-yellow-200 hover:text-yellow-300 mx-3 transition duration-300">تماس</a>
+                <a href="#" class="text-yellow-200 hover:text-yellow-300 mx-3 transition duration-300">شبکه‌های اجتماعی</a>
             </div>
+            <p class="mt-4 text-sm">© 1404 آموزشگاه آتیه درخشان</p>
         </div>
     </footer>
+
+    <!-- اسکریپت اسلایدر -->
+    <script>
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        let currentItem = 0;
+
+        function showNextSlide() {
+            carouselItems[currentItem].classList.remove('active');
+            currentItem = (currentItem + 1) % carouselItems.length;
+            carouselItems[currentItem].classList.add('active');
+        }
+
+        setInterval(showNextSlide, 5000);
+    </script>
 </body>
 </html>
