@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>آموزشگاه علمی آتیه درخشان</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         @font-face {
             font-family: 'Vazir';
@@ -12,7 +13,7 @@
         }
         body {
             font-family: 'Vazir', sans-serif;
-            background-color: #f0f4f8;
+            background: linear-gradient(to bottom, #fff7ed, #e0f2fe);
         }
         .hero-section {
             height: 600px;
@@ -31,9 +32,19 @@
             width: 100%;
             height: 100%;
             opacity: 0;
-            transition: opacity 1s ease-in-out;
+            transition: opacity 1.2s ease-in-out;
             background-size: cover;
             background-position: center;
+        }
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.7), rgba(234, 179, 8, 0.7));
+            z-index: 1;
         }
         .carousel-item.active {
             opacity: 1;
@@ -44,50 +55,52 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: white;
+            color: #fef08a;
             z-index: 10;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
         .hero-content h1 {
             font-size: 3.5rem;
             font-weight: bold;
-            animation: fadeInDown 1s ease-in-out;
+            animation: bounceIn 1s ease-in-out;
         }
         .hero-content p {
             font-size: 1.6rem;
             animation: fadeInUp 1.2s ease-in-out;
         }
-        .course-card {
+        .course-card, .classroom-card {
             transition: transform 0.4s ease, box-shadow 0.4s ease;
-            background: linear-gradient(145deg, #ffffff, #e0e7ff);
+            background: linear-gradient(145deg, #ffffff, #fef3e2);
             border-radius: 15px;
             overflow: hidden;
+            border: 2px solid #f97316;
         }
-        .course-card:hover {
-            transform: translateY(-12px);
+        .course-card:hover, .classroom-card:hover {
+            transform: translateY(-10px) scale(1.02);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
         .navbar {
-            background: linear-gradient(to right, #1e3a8a, #3b82f6);
+            background: linear-gradient(to right, #f97316, #fb923c);
         }
-        .contact-section {
-            background: linear-gradient(to right, #e0e7ff, #dbeafe);
+        .contact-section, .classroom-section {
+            background: linear-gradient(to right, #fef3e2, #e0f2fe);
             padding: 40px 0;
         }
         .footer {
-            background: linear-gradient(to right, #1e3a8a, #3b82f6);
+            background: linear-gradient(to right, #f97316, #fb923c);
         }
-        @keyframes fadeInDown {
-            0% { opacity: 0; transform: translateY(-20px); }
-            100% { opacity: 1; transform: translateY(0); }
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            60% { opacity: 1; transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
         @keyframes fadeInUp {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
         .btn-primary {
-            background: #facc15;
-            color: #1e3a8a;
+            background: #3b82f6;
+            color: white;
             font-weight: bold;
             border: none;
             padding: 10px 20px;
@@ -95,8 +108,12 @@
             transition: background 0.3s ease, transform 0.3s ease;
         }
         .btn-primary:hover {
-            background: #fef08a;
+            background: #2563eb;
             transform: scale(1.1);
+        }
+        .icon {
+            color: #f97316;
+            margin-left: 8px;
         }
     </style>
 </head>
@@ -122,36 +139,49 @@
             <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1200x600?text=کلاس‌های+آتیه+درخشان')"></div>
         </div>
         <div class="hero-content">
-            <h1>موفقیت از اینجا آغاز می‌شود</h1>
-            <p>با آموزش‌های برتر، آینده‌ات را بساز</p>
+            <h1>آینده‌ات را درخشان کن!</h1>
+            <p>با آموزش‌های ما، موفقیت در دستان توست</p>
             <a href="#" class="btn-primary mt-4 inline-block">شروع کن</a>
         </div>
     </section>
 
     <!-- بخش معرفی -->
     <section class="container mx-auto px-4 py-12 text-center">
-        <h2 class="text-3xl font-extrabold text-blue-800 mb-6">آتیه درخشان، انتخاب هوشمند</h2>
+        <h2 class="text-3xl font-extrabold text-blue-800 mb-6">آتیه درخشان، انتخاب تو</h2>
         <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
-            با اساتید حرفه‌ای و روش‌های نوین، راه موفقیت را هموار می‌کنیم. به ما بپیوندید!
+            با اساتید حرفه‌ای و روش‌های نوین، موفقیتت را تضمین می‌کنیم!
         </p>
+    </section>
+
+    <!-- بخش فضای آموزشی -->
+    <section class="classroom-section">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-extrabold text-blue-800 mb-8"><i class="fas fa-chalkboard-teacher icon"></i> فضای آموزشی ما</h2>
+            <div class="classroom-card bg-white shadow-lg p-6 mx-auto max-w-2xl">
+                <p class="text-lg text-gray-700 mb-4">
+                    کلاس‌های ما پر از انرژی و خلاقیت است! با روش‌های تدریس تعاملی و اساتید پرانگیزه، یادگیری را به تجربه‌ای شیرین تبدیل می‌کنیم.
+                </p>
+                <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold">بیشتر بخوانید</a>
+            </div>
+        </div>
     </section>
 
     <!-- بخش دوره‌ها -->
     <section class="container mx-auto px-4 py-12">
-        <h2 class="text-3xl font-extrabold text-blue-800 mb-8 text-center">دوره‌های ما</h2>
+        <h2 class="text-3xl font-extrabold text-blue-800 mb-8 text-center"><i class="fas fa-book-open icon"></i> دوره‌های ما</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="course-card bg-white shadow-lg p-5">
-                <h3 class="text-xl font-bold text-blue-700 mb-2">ریاضی پیشرفته</h3>
+                <h3 class="text-xl font-bold text-blue-700 mb-2"><i class="fas fa-calculator icon"></i> ریاضی پیشرفته</h3>
                 <p class="text-gray-600 mb-3">تسلط بر ریاضی برای کنکور و امتحانات</p>
                 <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold">بیشتر بدان</a>
             </div>
             <div class="course-card bg-white shadow-lg p-5">
-                <h3 class="text-xl font-bold text-blue-700 mb-2">علوم تجربی</h3>
+                <h3 class="text-xl font-bold text-blue-700 mb-2"><i class="fas fa-flask icon"></i> علوم تجربی</h3>
                 <p class="text-gray-600 mb-3">یادگیری عمیق علوم با رویکرد عملی</p>
                 <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold">بیشتر بدان</a>
             </div>
             <div class="course-card bg-white shadow-lg p-5">
-                <h3 class="text-xl font-bold text-blue-700 mb-2">زبان انگلیسی</h3>
+                <h3 class="text-xl font-bold text-blue-700 mb-2"><i class="fas fa-language icon"></i> زبان انگلیسی</h3>
                 <p class="text-gray-600 mb-3">مکالمه و گرامر برای موفقیت جهانی</p>
                 <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold">بیشتر بدان</a>
             </div>
@@ -161,7 +191,7 @@
     <!-- بخش تماس -->
     <section class="contact-section">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-extrabold text-blue-800 mb-6">با ما همراه شوید</h2>
+            <h2 class="text-3xl font-extrabold text-blue-800 mb-6"><i class="fas fa-phone-alt icon"></i> با ما همراه شوید</h2>
             <p class="text-lg text-gray-700 mb-3">برای مشاوره رایگان تماس بگیرید:</p>
             <p class="text-lg text-gray-700 mb-2"><strong>آدرس:</strong> سهند، فاز دو، نبش میدان معلم، مجتمع تجاری جواهر، طبقه دوم</p>
             <p class="text-lg text-gray-700"><strong>تلفن:</strong> 09144277240 - 09394713666</p>
@@ -172,7 +202,7 @@
     <!-- فوتر -->
     <footer class="footer text-white py-6">
         <div class="container mx-auto px-4 text-center">
-            <p class="text-lg mb-3">آتیه درخشان، مسیر موفقیت شما</p>
+            <p class="text-lg mb-3">آتیه درخشان، مسیر موفقیت تو</p>
             <p class="text-md mb-2">سهند، فاز دو، نبش میدان معلم، مجتمع جواهر، طبقه دوم</p>
             <p class="text-md mb-3">تلفن: 09144277240 - 09394713666</p>
             <div class="mt-3">
