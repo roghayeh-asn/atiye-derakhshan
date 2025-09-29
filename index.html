@@ -35,8 +35,9 @@
             height: 100%;
             opacity: 0;
             transition: opacity 1.2s ease-in-out;
-            background-size: cover;
-            background-position: center;
+            background-size: contain; /* تغییر از cover به contain برای نمایش کامل تصویر */
+            background-repeat: no-repeat; /* جلوگیری از تکرار تصویر */
+            background-position: center; /* مرکز تصویر ثابت بمونه */
         }
         .carousel-item::before {
             content: '';
@@ -136,7 +137,7 @@
     <!-- بخش هیرو با اسلایدر -->
     <section class="hero-section">
         <div class="carousel">
-            <div class="carousel-item active" style="background-image: url('https://github.com/roghayeh-asn/atiye-derakhshan/blob/main/photo_%DB%B2%DB%B0%DB%B2%DB%B5-%DB%B0%DB%B9-%DB%B1%DB%B1_%DB%B2%DB%B1-%DB%B3%DB%B6-%DB%B4%DB%B8.jpg?raw=true'); background-size: cover; background-position: center;">
+            <div class="carousel-item active" style="background-image: url('https://github.com/roghayeh-asn/atiye-derakhshan/blob/main/photo_%DB%B2%DB%B0%DB%B2%DB%B5-%DB%B0%DB%B9-%DB%B1%DB%B1_%DB%B2%DB%B1-%DB%B3%DB%B6-%DB%B4%DB%B8.jpg?raw=true'); background-size: contain; background-repeat: no-repeat; background-position: center;">
                 <!-- محتوای دلخواه برای اسلاید اول (اختیاری) -->
             </div>
             <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1200x450?text=کتاب‌های+آموزشی')"></div>
