@@ -256,19 +256,6 @@
             padding: 0 20px;
             z-index: 20;
         }
-        .carousel-controls button {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: #fff;
-            font-size: 1.5rem;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        .carousel-controls button:hover {
-            background: rgba(255, 255, 255, 0.4);
-        }
         .carousel-indicators {
             position: absolute;
             bottom: 20px;
@@ -421,6 +408,31 @@
                     <p class="text-gray-600 mb-4">دوره‌های آمادگی آزمون تیزهوشان با تمرکز بر مهارت‌های حل مسئله و تفکر انتقادی.</p>
                     <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold transition duration-300">جزئیات بیشتر</a>
                 </div>
+                <div class="course-card bg-white shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-700 mb-3 flex items-center gap-3"><i class="fas fa-book"></i> ادبیات فارسی</h3>
+                    <p class="text-gray-600 mb-4">یادگیری نگارش، شعر و ادبیات کلاسیک برای تقویت مهارت‌های زبانی و موفقیت در کنکور.</p>
+                    <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold transition duration-300">جزئیات بیشتر</a>
+                </div>
+                <div class="course-card bg-white shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-700 mb-3 flex items-center gap-3"><i class="fas fa-language"></i> زبان انگلیسی</h3>
+                    <p class="text-gray-600 mb-4">آموزش گرامر، مکالمه و مهارت‌های تست‌زنی برای آمادگی در آزمون‌های بین‌المللی و کنکور.</p>
+                    <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold transition duration-300">جزئیات بیشتر</a>
+                </div>
+                <div class="course-card bg-white shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-700 mb-3 flex items-center gap-3"><i class="fas fa-calculator"></i> ریاضی پایه</h3>
+                    <p class="text-gray-600 mb-4">تقویت پایه‌های ریاضی برای دانش‌آموزان ابتدایی و راهنمایی با روش‌های تعاملی.</p>
+                    <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold transition duration-300">جزئیات بیشتر</a>
+                </div>
+                <div class="course-card bg-white shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-700 mb-3 flex items-center gap-3"><i class="fas fa-lightbulb"></i> هوش و استعداد</h3>
+                    <p class="text-gray-600 mb-4">توسعه مهارت‌های شناختی و خلاقیت برای آمادگی در آزمون‌های تیزهوشان و المپیاد.</p>
+                    <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold transition duration-300">جزئیات بیشتر</a>
+                </div>
+                <div class="course-card bg-white shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-blue-700 mb-3 flex items-center gap-3"><i class="fas fa-graduation-cap"></i> آمادگی کنکور</h3>
+                    <p class="text-gray-600 mb-4">برنامه‌ریزی جامع و تکنیک‌های تست‌زنی برای موفقیت در کنکور سراسری و آزاد.</p>
+                    <a href="#" class="text-blue-500 hover:text-blue-800 font-semibold transition duration-300">جزئیات بیشتر</a>
+                </div>
             </div>
             <div class="course-slider-controls">
                 <button onclick="showPrevCourse()" class="prev"><i class="fas fa-chevron-right"></i></button>
@@ -430,6 +442,7 @@
                 <span class="active" onclick="currentCourse(0)"></span>
                 <span onclick="currentCourse(1)"></span>
                 <span onclick="currentCourse(2)"></span>
+                <span onclick="currentCourse(3)"></span>
             </div>
         </div>
     </section>
